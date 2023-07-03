@@ -72,10 +72,13 @@ print("Mean Squared Error:", mse)
 # Determine the direction of the predicted price movements for each currency pair
 predicted_direction = np.where(predictions > test.iloc[:, 0].values.reshape(-1, 1), 1, -1)
 
+# Calculate the F1 score of the model's predictions
+f1 = f1_score(np.where(test.iloc[:, 0] > 0, 1, -1), np.where(predictions > 0, 1, -1))
+print("F1 Score:", f1)
+
 # Buy the first currency pair and sell the second pair if the predicted direction is positive
 long_position = np.where(predicted_direction > 0, 1, 0)
 short_position = np.where(predicted_direction > 0, 0, 1)
-
 # Calculate the returns of the long and short positions for each currency pair
 returns = (long_position * (test.iloc[:, 1:] - train.iloc[:, 1:]) / train.iloc[:, 1:]) - (short_position * (test.iloc[:, 1:] - train.iloc[:, 1:]) / train.iloc[:, 1:])
 print(returns)
