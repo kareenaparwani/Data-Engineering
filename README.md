@@ -1,4 +1,4 @@
-Data Engineering Project - Currency Pair Analysis and Automated Trading
+**Data Engineering Project - Currency Pair Analysis and Automated Trading**
 
 This repository contains the code for a data engineering project developed during my spring semester of my Master of Science studies at the New York University Tandon School of Engineering. The project involves analyzing currency pair data, making predictions, and implementing an automated trading system using Python, polygon.io, and OANDA API.
 
@@ -18,7 +18,7 @@ Next, the data is split into training and testing sets using the train_test_spli
 After training the SVR model, it is used to predict the future price movements of the currency pairs using the testing set. The code calculates the Mean Squared Error (MSE) to evaluate the performance of the model's predictions.
 Based on the predicted price movements, the code determines the direction (positive or negative) of each currency pair. It then makes trading decisions by buying the first currency pair and selling the second pair if the predicted direction is positive. The code calculates the returns of the long and short positions for each currency pair and prints them for further analysis.
 
-Automated Trading System for OANDA: 
+**Automated Trading System for OANDA: **
 
 It connects to the OANDA API using the provided API key and accesses the specified OANDA account.
 The code fetches the current price of the currency pairs and places orders based on certain conditions defined in the execution sets. It calculates the average execution price for each set and stores it for future use.
